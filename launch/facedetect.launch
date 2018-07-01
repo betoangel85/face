@@ -1,0 +1,13 @@
+<launch>
+	<arg name="image_topic" value="/camera/image_raw" />
+  	<arg name="detection_topic" default="/face/faces" />
+  	<arg name="toggle_topic"  default="/face/toggle" />
+
+  	<node pkg="face"  name="face" type="faced.py" output="screen">
+    		<remap from="camera" to="$(arg image_topic)" />
+		<remap from="detections" to="$(arg detection_topic)" />
+		 <remap from="toggle" to="$(arg toggle_topic)" />
+		 <param name="detector_file" value="../include/haarcascade_face.xml"/>
+		 <param name="show_cv_window" type="bool" value="true" />
+	</node>
+</launch>
