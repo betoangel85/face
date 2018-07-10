@@ -5,7 +5,7 @@ from face.msg import vector
 
 def talker():
     pub = rospy.Publisher('lee', vector)
-    rospy.init_node('escribe', anonymous=True)
+    rospy.init_node('escribe')
     r = rospy.Rate(10) #10hz
     msg = vector()
     msg.x = 100

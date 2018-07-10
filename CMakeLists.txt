@@ -7,7 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
 	nodelet tf image_geometry cv_bridge  camera_info_manager)
 
 add_message_files(FILES vector.msg)
-add_service_files(FILES center.srv)
+add_service_files(FILES service_vector.srv)
 
 generate_messages(DEPENDENCIES sensor_msgs std_msgs)
 
